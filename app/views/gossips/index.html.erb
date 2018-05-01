@@ -5,6 +5,7 @@
   <thead>
     <th>Gossip</th>
     <th>Lien vers la page</th>
+    <th>Nb de commentaires</th>
   </thead>
 
   <tbody>
@@ -13,6 +14,7 @@
     <tr>
       <td> <%= gossip.content %> </td>
       <td> <a href="<%= gossip_path(gossip.id) %>">Voir la page du Gossip</a></td>
+      <td align="right"><%= gossip.comments.count %></td>
     </tr>
     <% end %>
 
