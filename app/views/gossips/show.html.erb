@@ -17,6 +17,7 @@
 <% @gossip.comments.each do |comment| %>
 <li>
 <%= comment.body %>
+<%= link_to('Editer', edit_comment_path(comment.id)) %>
 </li>
 <% end %>
 </ul>

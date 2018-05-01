@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     end
 
     def edit
-
+      @comment = Comment.find(params[:id])
     end
 
     def show
@@ -25,13 +25,16 @@ class CommentsController < ApplicationController
     end
 
     def update
-
+      @params_comment_update = params.require(:comment).permit(:anonymous_commentor, :body)
+      @comment = Comment.find(params[:id])
+      @comment.update(@params_comment_update)
 
     end
 
     def destroy
-
-
+      @comment = Comment.find(params[:id])
+      @comment.destroy
+      redirect_to gossip_path(@comment.gossip_id)
     end
 
     def params_comment
