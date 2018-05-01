@@ -1,4 +1,4 @@
-<h1>Votre Gossip</h1>
+<h2>Votre Gossip</h2>
 
 <p><%= @gossip.content %></p>
 
@@ -11,3 +11,26 @@
 <li>
 <a href="<%= gossips_path %>">Revenir à l'index</a>
 </li>
+
+<h2>Les commentaires</h2>
+<ul>
+<% @gossip.comments.each do |comment| %>
+<li>
+<%= comment.body %>
+</li>
+<% end %>
+</ul>
+
+<h2>Lâche ton com' !</h2>
+
+<%= form_with model: @comment do |form| %>
+
+<%= form.label :anonymous_author %>
+<%= form.text_field :anonymous_author %>
+
+<%= form.label :content %>
+<%= form.text_field :content %>
+
+<%= form.submit %>
+
+<% end %>

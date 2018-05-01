@@ -19,6 +19,8 @@ class GossipsController < ApplicationController
 
   def show
     @gossip = Gossip.find(params[:id])
+    @comments = Comment.all
+    @comment = Comment.new
   end
 
   def update
