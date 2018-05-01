@@ -1,0 +1,17 @@
+<h1>Edit a gossip. Bitch with us!</h1>
+
+<p><%= form_with model: @gossip do |form| %>
+
+<%= form.label :anonymous_author %>
+<%= form.text_field :anonymous_author %>
+
+<%= form.label :content %>
+<%= form.text_field :content %>
+
+<%= form.submit %>
+
+<% end %></p>
+
+<p>
+<a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Etes-vous sûr de supprimer ce potin ?" data-method="delete">Supprimer le Gossip</a>
+</p>

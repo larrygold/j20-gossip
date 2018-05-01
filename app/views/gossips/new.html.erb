@@ -1,0 +1,13 @@
+<h1>Create a gossip. Bitch with us!</h1>
+
+<%= form_with model: @gossip do |form| %>
+
+<%= form.label :anonymous_author %>
+<%= form.text_field :anonymous_author %>
+
+<%= form.label :content %>
+<%= form.text_field :content %>
+
+<%= form.submit %>
+
+<% end %>

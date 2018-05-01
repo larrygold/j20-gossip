@@ -1,0 +1,13 @@
+<h1>Votre Gossip</h1>
+
+<p><%= @gossip.content %></p>
+
+<ul style="list-style: none"></ul>
+
+<li>
+<a href="<%= edit_gossip_path(params[:id]) %>">Editer le Gossip</a>
+</li>
+
+<li>
+<a href="<%= gossips_path %>">Revenir à l'index</a>
+</li>
